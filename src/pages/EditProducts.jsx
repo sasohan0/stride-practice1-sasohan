@@ -37,13 +37,15 @@ const EditProducts = () => {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center">Edit Product</h1>
+      <h1 className="text-5xl text-purple-600 hover:scale-110 ease-in duration-300 font-bold text-center">
+        Edit Product
+      </h1>
 
       <div className="my-16">
         <form onSubmit={handleSubmit}>
-          <div className="mt-2">
+          <div className="mr-2 flex justify-center items-center">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-purple-100  hover:bg-purple-200   p-4 hover:w-full ease-in duration-300 p-4 w-96 border border border-black rounded-lg"
               type="text"
               name="title"
               placeholder="Title"
@@ -51,9 +53,9 @@ const EditProducts = () => {
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-          <div className="mt-2">
+          <div className="mr-2 flex justify-center items-center">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-purple-100  hover:bg-purple-200 p-4 hover:w-full ease-in duration-300 p-4 w-96 border border border-black rounded-lg"
               type="text"
               name="brand"
               placeholder="Brand"
@@ -61,9 +63,9 @@ const EditProducts = () => {
               onChange={(e) => setBrand(e.target.value)}
             />
           </div>
-          <div className="mt-2">
+          <div className="mr-2 flex justify-center items-center">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-purple-100  hover:bg-purple-200 p-4 hover:w-full ease-in duration-300 p-4 w-96 border border border-black rounded-lg"
               type="number"
               name="price"
               placeholder="Price"
@@ -71,9 +73,9 @@ const EditProducts = () => {
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
-          <div className="mt-2">
+          <div className="mr-2 flex justify-center items-center">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-purple-100  hover:bg-purple-200 p-4 hover:w-full ease-in duration-300 p-4 w-96 border border border-black rounded-lg"
               type="text"
               name="description"
               placeholder="Description"
@@ -81,9 +83,9 @@ const EditProducts = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <div className="mt-2">
+          <div className="mr-2 flex justify-center items-center">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-purple-100  hover:bg-purple-200 p-4 hover:w-full ease-in duration-300 p-4 w-96 border border border-black rounded-lg"
               type="text"
               name="image_url"
               placeholder="Image URL"
@@ -91,9 +93,9 @@ const EditProducts = () => {
               onChange={(e) => setImageURL(e.target.value)}
             />
           </div>
-          <div className="mt-2">
+          <div className="mr-2 flex justify-center items-center">
             <input
-              className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+              className="bg-purple-100  hover:bg-purple-200 p-4 hover:w-full ease-in duration-300 p-4 w-96 border border border-black rounded-lg"
               type="text"
               name="id"
               placeholder="ID"
@@ -101,9 +103,9 @@ const EditProducts = () => {
               onChange={(e) => setId(e.target.value)}
             />
           </div>
-          <div className="mt-2 flex justify-center items-center">
+          <div className="mr-2 flex justify-center items-center ">
             <input
-              className="btn mt-4 w-full bg-red-500 text-white p-4"
+              className="btn mt-4 hover:text-black ease-in duration-300 w-full border bg-purple-500 text-white p-4"
               type="submit"
               value="Add product"
             />

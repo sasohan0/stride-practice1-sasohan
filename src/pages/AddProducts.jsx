@@ -28,7 +28,7 @@ const AddProducts = () => {
 
   return (
     <div className="">
-      <h1 className="text-5xl font-bold text-center hover:animate-pulse">
+      <h1 className="text-5xl font-bold text-purple-600 text-center hover:animate-pulse">
         Add a Product
       </h1>
 
@@ -82,9 +82,9 @@ const AddProducts = () => {
               placeholder="ID"
             />
           </div>
-          <div className="mt-2 flex justify-center items-center flex justify-center items-center">
+          <div className="mt-2 flex justify-center items-center ">
             <input
-              className="btn mt-4 w-full bg-red-500 text-white p-4"
+              className="btn mt-4 w-full bg-purple-500 text-white p-4 hover:text-black"
               type="submit"
               value="Add product"
             />
