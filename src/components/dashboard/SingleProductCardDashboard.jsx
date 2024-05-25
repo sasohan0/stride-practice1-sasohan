@@ -41,7 +41,7 @@ const SingleProductCardDashboard = ({ shoe, onDelete }) => {
         <h3 className="text-xl font-semibold">{price}</h3>
         <p>{description}</p>
         <div className="card-actions justify-center w-full">
-          <button className="btn bg-indigo-500 text-white">
+          <button className="btn bg-purple-700 text-white">
             <Link to={`/products/${id}`}>See details</Link>
           </button>
           <button className="btn bg-green-600 text-white">

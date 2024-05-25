@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { logout, user } = useAuth();
 
-  const handleLogout = async()=>{
-    await logout()
-  }
+  const handleLogout = async () => {
+    Swal.fire({
+      title: "Do you really want to logout?",
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        logout();
+        Swal.fire("Logged Out!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Still Logged in");
+      }
+    });
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -50,7 +65,7 @@ const Navbar = () => {
             )}
             {user && (
               <li>
-                <Link to={"/dashboard"}>Dashboard</Link>
+                <Link to={"/dashboard/home/"}>Dashboard</Link>
               </li>
             )}
             {user && (
@@ -87,7 +102,7 @@ const Navbar = () => {
           )}
           {user && (
             <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
+              <Link to={"/dashboard/home"}>Dashboard</Link>
             </li>
           )}
         </ul>
@@ -102,9 +117,14 @@ const Navbar = () => {
           </button>
         )}
         <div className="avatar">
-          <div className="w-12 rounded-full border-2 border-black">
-            <img src={user?.photoURL || "/public/placeholder.jpg"} />
-          </div>
+          <Link className="w-12 " to={user ? "/dashboard/home" : "/login"}>
+            <div className="rounded-full">
+              <img
+                className="rounded-full  border-purple-500 border-4"
+                src={user?.photoURL || "/public/placeholder.jpg"}
+              />
+            </div>
+          </Link>
         </div>
       </div>
     </div>

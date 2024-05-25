@@ -23,7 +23,7 @@ const SingleProduct = ({ shoe }) => {
             : description}
         </p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">
+          <button className="btn bg-purple-700 text-white hover:text-black">
             <Link to={`/products/${id}`}>See details</Link>
           </button>
         </div>
