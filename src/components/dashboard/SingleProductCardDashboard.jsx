@@ -39,7 +39,11 @@ const SingleProductCardDashboard = ({ shoe, onDelete }) => {
         <h2 className="card-title">{title}</h2>
         <h3 className="text-xl font-semibold">{brand}</h3>
         <h3 className="text-xl font-semibold">{price}</h3>
-        <p>{description}</p>
+        <p className="w-full h-20">
+          {description.length > 100
+            ? description.slice(0, 100) + "..."
+            : description}
+        </p>
         <div className="card-actions justify-center w-full">
           <button className="btn bg-purple-700 text-white">
             <Link to={`/products/${id}`}>See details</Link>

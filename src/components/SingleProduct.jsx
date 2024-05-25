@@ -18,8 +18,8 @@ const SingleProduct = ({ shoe }) => {
         <h3 className="text-xl font-semibold">{brand}</h3>
         <h3 className="text-xl font-semibold">${price}</h3>
         <p className="w-full h-20">
-          {description.length > 127
-            ? description.slice(0, 127) + "..."
+          {description.length > 100
+            ? description.slice(0, 100) + "..."
             : description}
         </p>
         <div className="card-actions justify-end">
