@@ -26,7 +26,7 @@ const SingleProductCardDashboard = ({ shoe, onDelete }) => {
         <h3 className="text-xl font-semibold">{brand}</h3>
         <h3 className="text-xl font-semibold">{price}</h3>
         <p>{description}</p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-center w-full">
           <button className="btn bg-indigo-500 text-white">
             <Link to={`/products/${id}`}>See details</Link>
           </button>
