@@ -54,6 +54,7 @@ const AddProducts = () => {
               type="text"
               name="title"
               placeholder="Title"
+              required
             />
           </div>
           <div className="mt-2 flex justify-center items-center">
@@ -62,6 +63,7 @@ const AddProducts = () => {
               type="text"
               name="brand"
               placeholder="Brand"
+              required
             />
           </div>
           <div className="mt-2 flex justify-center items-center">
@@ -70,6 +72,7 @@ const AddProducts = () => {
               type="number"
               name="price"
               placeholder="Price"
+              required
             />
           </div>
           <div className="mt-2 flex justify-center items-center">
@@ -78,6 +81,7 @@ const AddProducts = () => {
               type="text"
               name="description"
               placeholder="Description"
+              required
             />
           </div>
           <div className="mt-2 flex justify-center items-center">
@@ -86,6 +90,7 @@ const AddProducts = () => {
               type="text"
               name="image_url"
               placeholder="Image URL"
+              required
             />
           </div>
           <div className="mt-2 flex justify-center items-center">
@@ -94,6 +99,7 @@ const AddProducts = () => {
               type="text"
               name="id"
               placeholder="ID"
+              required
             />
           </div>
           <div className="mt-2 flex justify-center items-center ">
@@ -101,6 +107,7 @@ const AddProducts = () => {
               className="btn mt-4 w-full bg-purple-500 text-white p-4 hover:text-black"
               type="submit"
               value="Add product"
+              required
             />
           </div>
         </form>

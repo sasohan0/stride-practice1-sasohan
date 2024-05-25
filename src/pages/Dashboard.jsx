@@ -10,7 +10,7 @@ const Dashboard = () => {
           <div className="w-44 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img
               alt=" NO IMG NO IMG NO IMG NO IMG NO IMG "
-              src={user.photoUrl ? user.photoUrl : "/public/placeholder.jpg"}
+              src={user?.photoURL || "/public/placeholder.jpg"}
             />
           </div>
         </div>

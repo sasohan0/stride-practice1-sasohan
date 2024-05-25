@@ -65,6 +65,7 @@ const EditProducts = () => {
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              required
             />
           </div>
           <div className="mr-2 flex justify-center items-center">
@@ -75,6 +76,7 @@ const EditProducts = () => {
               placeholder="Brand"
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
+              required
             />
           </div>
           <div className="mr-2 flex justify-center items-center">
@@ -85,6 +87,7 @@ const EditProducts = () => {
               placeholder="Price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              required
             />
           </div>
           <div className="mr-2 flex justify-center items-center">
@@ -95,6 +98,7 @@ const EditProducts = () => {
               placeholder="Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              required
             />
           </div>
           <div className="mr-2 flex justify-center items-center">
@@ -105,6 +109,7 @@ const EditProducts = () => {
               placeholder="Image URL"
               value={image_url}
               onChange={(e) => setImageURL(e.target.value)}
+              required
             />
           </div>
           <div className="mr-2 flex justify-center items-center">
@@ -115,6 +120,7 @@ const EditProducts = () => {
               placeholder="ID"
               value={id}
               onChange={(e) => setId(e.target.value)}
+              required
             />
           </div>
 

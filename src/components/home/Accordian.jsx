@@ -1,34 +1,32 @@
 const Accordian = () => {
   return (
-    <div className="my-20 px-8 w-3/4 mx-auto">
+    <div className="bg-purple-100 my-20 px-8 w-3/4 mx-auto py-4">
       <h1 className="my-16 text-center font-bold text-3xl">
         Frequently Asked Questions!
       </h1>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="bg-purple-200 collapse collapse-arrow ">
         <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+          How to determine size?
         </div>
         <div className="collapse-content">
-          <p>hello</p>
+          <p>Grab a scale and watch our size measurement on product page.</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-purple-200">
         <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
+        <div className="collapse-title text-xl font-medium">How to return?</div>
         <div className="collapse-content">
-          <p>hello</p>
+          <p>Make Unboxing video and mail us!</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-purple-200">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+          How to check authentic product?
         </div>
         <div className="collapse-content">
-          <p>hello</p>
+          <p>Scan the barcode on package</p>
         </div>
       </div>
     </div>
