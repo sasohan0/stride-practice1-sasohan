@@ -1,19 +1,33 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
 const SingleProductCardDashboard = ({ shoe, onDelete }) => {
   const { id, title, brand, price, description, image_url } = shoe;
 
   const handleDelete = async () => {
-    await fetch(`http://localhost:3000/shoes/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        onDelete(id);
-      });
+    Swal.fire({
+      title: "Do you want to delete the product?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/shoes/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            onDelete(id);
+          });
+        Swal.fire("Deleted successfully", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Not deleted");
+      }
+    });
   };
 
   return (
