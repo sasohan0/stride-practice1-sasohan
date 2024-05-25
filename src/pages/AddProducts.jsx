@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProducts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,19 +13,31 @@ const AddProducts = () => {
     const image_url = form.image_url.value;
 
     const data = { id, title, brand, price, description, image_url };
-
-    await fetch("http://localhost:3000/shoes", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        form.reset();
-      });
+    Swal.fire({
+      title: "Do you want to add the product?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("http://localhost:3000/shoes", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            form.reset();
+          });
+        Swal.fire("Product Added!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Product was not added", "", "info");
+      }
+    });
   };
 
   return (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const EditProducts = () => {
   const shoe = useLoaderData();
@@ -23,16 +24,29 @@ const EditProducts = () => {
     const image_url = form.image_url.value;
 
     const data = { id, title, brand, price, description, image_url };
-
-    await fetch(`http://localhost:3000/shoes/${shoe.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/shoes/${shoe.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+        Swal.fire("Saved!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved");
+      }
+    });
   };
 
   return (
@@ -103,11 +117,12 @@ const EditProducts = () => {
               onChange={(e) => setId(e.target.value)}
             />
           </div>
-          <div className="mr-2 flex justify-center items-center ">
+
+          <div className="modal-action flex justify-center items-center">
             <input
-              className="btn mt-4 hover:text-black ease-in duration-300 w-full border bg-purple-500 text-white p-4"
+              className="btn hover:text-black ease-in duration-300 w-auto h-auto border bg-purple-500 text-white p-4"
               type="submit"
-              value="Add product"
+              value="Edit product"
             />
           </div>
         </form>
