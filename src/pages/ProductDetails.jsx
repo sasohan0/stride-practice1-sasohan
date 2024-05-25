@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
   const shoe = useLoaderData();
@@ -6,14 +6,23 @@ const ProductDetails = () => {
   const { brand, description, image_url, price, title } = shoe;
 
   return (
-    <div>
-      <h1 className="text-5xl text-center font-bold">{title}</h1>
-
-      <img className="h-[600px]" src={image_url} alt="product image" />
-
-      <h3 className="text-2xl font-semibold">{price} $$</h3>
-      <h3 className="text-xl font-semibold">{brand}</h3>
-      <p className="text-lg font-light">{description}</p>
+    <div className="flex justify-center items-center">
+      <div className="card w-96 h-auto bg-base-100 shadow-xl">
+        <figure className="bg-base-200  ">
+          <img className=" scale-150 " src={image_url} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title text-purple-500">{title}</h2>
+          <h3 className="text-xl font-semibold">{brand}</h3>
+          <h3 className="text-xl font-semibold">${price}</h3>
+          <p className="w-full ">{description}</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">
+              <Link to={`/`}>Back to Products</Link>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
